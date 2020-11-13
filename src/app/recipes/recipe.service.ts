@@ -33,6 +33,10 @@ export class RecipeService {
         return this.recipes;
     }
 
+    getRecipe(index: number) {
+        return this.recipes[index];
+    }
+
     selectedRecipe(recipe: Recipe) {
         this.recipeDetail = recipe;
 
