@@ -1,0 +1,13 @@
+input.ng-valid.ng-dirty, textarea.ng-valid.ng-dirty,
+input.ng-valid.ng-touched, textarea.ng-valid.ng-touched  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+input.ng-invalid.ng-dirty, textarea.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched  {
+    border-left: 5px solid #a94442; /* red */
+  }
+
+  small {
+      color: #a94442;
+  }

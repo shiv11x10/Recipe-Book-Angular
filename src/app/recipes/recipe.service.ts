@@ -3,7 +3,9 @@ import { Subject } from 'rxjs';
 import { Ingredient } from '../shared/ingredient.model';
 import { Recipe } from './recipe.model';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class RecipeService {
     recipeDetail:Recipe;
     // recipeSelected = new EventEmitter<Recipe>();
@@ -37,11 +39,24 @@ export class RecipeService {
         return this.recipes[index];
     }
 
-    selectedRecipe(recipe: Recipe) {
-        this.recipeDetail = recipe;
-
-        //this.recipeSelected.emit(this.recipeDetail);  //with eventemitter
-        this.recipeSelected.next(this.recipeDetail);
+    addRecipe(recipe: Recipe) {
+        this.recipes.push(recipe);
     }
+
+    updateRecipe(index: number, newRecipe: Recipe) {
+        this.recipes[index] = newRecipe;
+    }
+
+    deleteRecipe(index: number) {
+        this.recipes.splice(index, 1);
+    }
+
+    //we are using routing now so this is not in use
+    // selectedRecipe(recipe: Recipe) {
+    //     this.recipeDetail = recipe;
+
+    //     //this.recipeSelected.emit(this.recipeDetail);  //with eventemitter
+    //     this.recipeSelected.next(this.recipeDetail);
+    // }
 
 }

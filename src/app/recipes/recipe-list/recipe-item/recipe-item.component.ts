@@ -14,6 +14,7 @@ export class RecipeItemComponent implements OnInit {
 
   // constructor(private recipeService: RecipeService) { }
 
+  //we are using routing now so this not in use
   // onSelected() {
   //   // this.recipeService.recipeSelected.emit(this.recipe);
   //   this.recipeService.selectedRecipe(this.recipe);
